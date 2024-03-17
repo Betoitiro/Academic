@@ -1,0 +1,108 @@
+Conceitos que serão abordados nesse resumo: 
+
+Conceito de thread;
+
+Descrever o modelo de threads classico;
+
+Discutir implementações de threds;
+
+
+Introdução: 
+
+A capacidade de executar tarefas simultaneas é possivel atravez da utilização de threads.
+
+Tambem conhecidas como processos leves, premitem multiplas tarefas entre si, simultaneamente. 
+
+Questão 01:
+
+Em um senario que voce é desenvolvedor de uma empresa de softwere que esta com problema no carregamento do sistema, devido ao tamanho da aplicação. Analise o grafico e informe a solução para essas problematicas.
+
+​​​​​Após observar o gráfico, responda as seguintes questões:
+
+a)O que você pode concluir quanto ao desempenho da aplicação? Estava realmente travando como foi relatado pelo cliente?
+
+b) Qual solução poderia ser empregada? Como seria a implementação da solução na aplicação?
+
+Resposta A: Pelo analise preliminar do gráfico apresentado na imagem acima, é notório que esta havendo um estrangulamento no sistema. Ao meu ver, aparentemente esta havendo um grande pico de carregamento de uma vez, assim sobrecarregando o sistema, Nesse modo seria necessário uma intervenção nos threads e na maneira que esta sendo aplicada o processamento, a mesma será apresentada na próxima questão.
+
+Resposta B: Como foi abordado na questão anterior, o sistema esta sendo sobrecarregado por dois motivos, o primeiro é o grande putativo de informações que esta sendo carregada em um curto período de tempo e de uma vez só. Já a segunda problemática seria aparentemente a quantidade de threads que esta sendo inferior a necessária para o carregamento do sistema de maneira eficiente. Nesse sentido as soluções para essas problemáticas seria a aplicação de mais threads se possível e uma subdivisão de tarefas, desse modo parcelando as ações a serem tomadas. Nesse sentido não sobrecarregaria o sistema e acabaria com a deficiência crônica de lentidão no carregamento de informações
+
+
+RESPOSTA DESEJADA:
+
+a) A aplicação apresenta alto uso da unidade de processamento somente na segunda etapa de funcionamento da ferramenta (processamento de dados), enquanto na primeira e terceira etapas a unidade de processamento é pouco usada, ficando praticamente ociosa. Desse modo, é possível concluir que a aplicação certamente não está travando.
+
+b)O problema de desempenho pode ser resolvido pela utilização de threads. Atualmente, a aplicação está lenta devido ao fato de executar as análises de modo sequencial. A aplicação pode ser dividida em três threads: a primeira é responsável pela leitura dos arquivos, a segunda pelo processamento e a terceira pelo armazenamento. Desse modo, quando a análise atual entrar na etapa de processamento, a leitura dos dados para a próxima análise já pode ser iniciada; os dados já estarão prontos para quando a próxima análise entrar na etapa de processamento, não causando nenhuma espera. Assim, de modo análogo em relação às etapas de processamento e armazenamento.
+
+
+
+ESTRATEGIAS DE IMPLEMENTAÇÃO:
+
+{({
+
+	threads podem ser conhecidos como linha de execulção.
+	
+	Threads são responsaveis pela multi-tarefas do processador
+	
+	Quanto melhor o processador, melhor o trafego de informações do sistema, assim deixando o sistema mais fluido e lendo mais arquivos de uma só vez
+
+	{{
+		
+		TEMOS QUATRTO MODELOS DE THREADS
+	
+		MUITO-PARA-UM	mapeia varios thrads de nivel de usuario
+		UM-PARA-UM 	mapeia cada threds do usuario para um threads do sistema
+		Muitos-para-Muitos 	mapeia varios threads de usuario para um de sistema
+	}}
+
+
+})}
+
+-> threads no espaço do usuario;
+-> threads no nucleo;
+-> implementação hibrida.
+
+> threads no espaço do usuario, são aqueles que possuem somente implementações no setor interno. Nesse segmento cada processamento tem sua tabela de threads;
+
+> threads no nucleo, são aqueles que podem ser acessados pelo sistema operacional, assim sendo responsavel por todos o gerenciamento das threads. (O nucleo detem a tabela threads)
+
+> implementações hibridas, são aquelas que combinam as duas estrategias anteriores, de maneira que o nucleo gerencia suas threads e essas odem se dividir dentro do espaço do usuario
+
+
+VANTAGENS:
+
+> threads no usuario: Permite o controle e a alternancia de threads dentro do mesmo processo.
+
+> Threads no nucleo: Acesso direto ao nucleo do sistema para execultar chamadas.
+
+> Hibridas: Combinas as vantagens de cada abordagem e tenta eliminar as deficiencias 
+
+DESVANTAGENS:
+
+>threads no usuario: Bloqueio de todas as threads nas camadas do sistema;
+
+> Threads no nucleo: Maior curso de operação em decorrencia do acesso direto no nucleo;
+
+> Hibridas: Tem grande complexidade de implementação e gerenciamento.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
