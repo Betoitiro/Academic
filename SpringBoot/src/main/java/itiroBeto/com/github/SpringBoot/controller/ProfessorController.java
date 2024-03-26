@@ -4,10 +4,13 @@ import itiroBeto.com.github.SpringBoot.model.Professor;
 import itiroBeto.com.github.SpringBoot.service.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("professor")
 public class ProfessorController {
 
     @Autowired
@@ -18,5 +21,29 @@ public class ProfessorController {
     @ResponseStatus(HttpStatus.OK)
     public void create(@RequestBody Professor professor){
         professorService.create(professor);
+    }
+
+    @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Professor> findAll(){
+        return professorService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Optional<Professor> findByid(@PathVariable Long id){
+        return professorService.findById(id);
+    }
+
+    @PutMapping("(/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updated(@RequestBody Professor professor, @PathVariable Long id){
+        professorService.updated(id, professor);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteByid(@PathVariable Long id){
+        professorService.deleteById(id);
     }
 }
