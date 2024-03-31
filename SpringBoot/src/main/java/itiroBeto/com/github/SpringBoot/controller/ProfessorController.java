@@ -4,6 +4,7 @@ import itiroBeto.com.github.SpringBoot.model.Professor;
 import itiroBeto.com.github.SpringBoot.service.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,30 +21,47 @@ public class ProfessorController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void create(@RequestBody Professor professor){
-        professorService.create(professor);
+        professorService.createProfessor(professor);
     }
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Professor> findAll(){
-        return professorService.findAll();
+        return professorService.findAllProfessors();
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Optional<Professor> findByid(@PathVariable Long id){
-        return professorService.findById(id);
+        return professorService.findProfessorById(id);
     }
 
     @PutMapping("(/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updated(@RequestBody Professor professor, @PathVariable Long id){
-        professorService.updated(id, professor);
+        professorService.updateProfessor(id, professor);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteByid(@PathVariable Long id){
-        professorService.deleteById(id);
+        professorService.deleteProfessorById(id);
     }
+
+    @PutMapping("/{idProfessor}/matriculas/{idMatricula}/notas")
+    public ResponseEntity<String> inserirNotas(
+            @PathVariable Long idProfessor,
+            @PathVariable Long idMatricula,
+            @RequestParam Double nota1,
+            @RequestParam Double nota2
+    ) {
+        try {
+            professorService.inserirNotas(idMatricula, nota1, nota2);
+            return ResponseEntity.ok("Notas do aluno inseridas com sucesso.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Erro ao inserir notas do aluno: " + e.getMessage());
+        }
+    }
+
 }

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.HTML;
+import java.util.List;
 
 @RestController
 @RequestMapping("/diciplina")
@@ -22,4 +23,9 @@ public class DiciplinaController {
         diciplinaService.create(diciplina);
     }
 
+    @GetMapping("all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Diciplina> findAll(){
+        return diciplinaService.FindAl();
+    }
 }
