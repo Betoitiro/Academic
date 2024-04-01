@@ -10,7 +10,7 @@ public class Funcionario {
 
     private String cargo;
 
-    public Funcionario(String nome, int idade, double salario, String cargo, String departamento) {
+    public Funcionario(String nome, int idade, double salario, String cargo) {
         this.nome = nome;
         this.idade = idade;
         this.salario = salario;
@@ -52,6 +52,11 @@ public class Funcionario {
     public void pagamento(){
         double salarioI = salario - (salario *15)/100;
         System.out.println("O salario do funcionario é de " + salarioI);
+    }
+
+    public void pagamentoBeneficente(){
+        double salarioB = salario + (salario * 10)/100;
+        System.out.println("O salario com bonificação é de " + salarioB);
     }
 }
 

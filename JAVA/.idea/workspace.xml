@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="657b5763-ff83-47c0-86f6-db5cf79deec1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Prova/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TEDII/ContaEspecial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TEDII/ContaEspecial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Prova/Estagiario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Estagiario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Prova/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Prova/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Gerente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.AppConta.executor": "Run",
     "Application.AppProduto.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",

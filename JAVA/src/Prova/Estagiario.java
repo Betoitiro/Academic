@@ -37,4 +37,9 @@ public class Estagiario {
     public void setPeriodo(int periodo) {
         this.periodo = periodo;
     }
+
+    public void ExibirEstagiario(){
+        System.out.println("nome: " + nome +
+                " idade: " + idade + " Periodo: " + periodo );
+    }
 }
