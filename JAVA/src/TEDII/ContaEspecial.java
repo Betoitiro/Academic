@@ -1,6 +1,6 @@
 package TEDII;
 
-public class ContaEspecial {
+public class ContaEspecial extends Conta {
     double limite;
 
     boolean sacar(double valor) {
