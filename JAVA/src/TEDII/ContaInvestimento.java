@@ -1,4 +1,4 @@
-package Prova;
+package TEDII;
 
 public class ContaInvestimento {
     double taxa;
