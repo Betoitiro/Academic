@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="657b5763-ff83-47c0-86f6-db5cf79deec1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Prova/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Prova/Estagiario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Estagiario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Prova/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Prova/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Prova/Gerente.java" afterDir="false" />
-    </list>
+    <list default="true" id="657b5763-ff83-47c0-86f6-db5cf79deec1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

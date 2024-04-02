@@ -1,6 +1,6 @@
 package TEDII;
 
-public class ContaInvestimento {
+public class ContaInvestimento extends Conta {
     double taxa;
     int prazo;
 
