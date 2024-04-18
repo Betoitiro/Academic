@@ -21,12 +21,17 @@ public class DiciplinaService {
         diciplinaRepository.save(diciplina);
     }
 
-    public List<Diciplina> FindAl(){
+    public List<Diciplina> FindAll(){
         return diciplinaRepository.findAll();
     }
 
     public Optional<Diciplina> findById(Long id){
         return diciplinaRepository.findById(id);
+    }
+
+
+    public List<Diciplina> findByIdProfessor(Long professorId){
+        return diciplinaRepository.findByProfessorId(professorId);
     }
 
     public void updated(Long id, Diciplina diciplina){
