@@ -20,7 +20,6 @@ public class Professor implements Serializable {
     private Long id;
     private String name;
     private String email;
-    private String materia;
 
     public Long getId() {
         return id;
@@ -46,13 +45,6 @@ public class Professor implements Serializable {
         this.email = email;
     }
 
-    public String getMateria() {
-        return materia;
-    }
-
-    public void setMateria(String materia) {
-        this.materia = materia;
-    }
 }
 
 

@@ -16,8 +16,6 @@ import java.util.Optional;
 public class ProfessorService {
     @Autowired
     private ProfessorRepository professorRepository;
-    @Autowired
-    private MatriculaAlunoRepository matriculaAlunoRepository;
 
     public void createProfessor(Professor professor) {
         professorRepository.save(professor);
@@ -41,7 +39,6 @@ public class ProfessorService {
         Professor professorUpdated = professorFromDb.get();
         professorUpdated.setName(professor.getName());
         professorUpdated.setEmail(professor.getEmail());
-        professorUpdated.setMateria(professor.getMateria());
 
         professorRepository.save(professorUpdated);
     }
@@ -50,16 +47,4 @@ public class ProfessorService {
         professorRepository.deleteById(id);
     }
 
-    public void inserirNotas(Long idMatricula, double nota1, double nota2) {
-        Optional<MatriculaAluno> matriculaAlunoOptional = matriculaAlunoRepository.findById(idMatricula);
-
-        if (matriculaAlunoOptional.isPresent()) {
-            MatriculaAluno matriculaAluno = matriculaAlunoOptional.get();
-            matriculaAluno.setNota1(nota1);
-            matriculaAluno.setNota2(nota2);
-            matriculaAlunoRepository.save(matriculaAluno);
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Matrícula do aluno não encontrada");
-        }
-    }
 }

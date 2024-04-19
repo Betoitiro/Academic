@@ -1,9 +1,7 @@
 package itiroBeto.com.github.SpringBoot.controller;
 
 import itiroBeto.com.github.SpringBoot.model.Diciplina;
-import itiroBeto.com.github.SpringBoot.repository.DiciplinaRepository;
 import itiroBeto.com.github.SpringBoot.service.DiciplinaService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +30,8 @@ public class DiciplinaController {
 
     @GetMapping("/professor/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public  List<Diciplina> findByIdProfessor(@PathVariable Long professorId){
-        return diciplinaService.findByIdProfessor(professorId);
+    public List<Diciplina> findByIdProfessor(@PathVariable Long id){
+        return diciplinaService.findByIdProfessor(id);
     }
+
 }

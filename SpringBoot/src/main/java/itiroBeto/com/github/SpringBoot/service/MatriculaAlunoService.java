@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MatriculaAlunoService {
@@ -24,5 +25,12 @@ public class MatriculaAlunoService {
     }
 
 
+
+    //outa maneira de buscar por id, sem ser usando optional
+    public MatriculaAluno findById(Long id){
+        return matriculaAlunoRepository.findById(id).orElse(null);
+    }
+
+    public 
 
 }

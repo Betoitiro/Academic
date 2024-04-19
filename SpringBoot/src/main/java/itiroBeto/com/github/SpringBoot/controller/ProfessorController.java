@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("professor")
+@RequestMapping("/professor")
 public class ProfessorController {
 
     @Autowired
@@ -24,6 +24,11 @@ public class ProfessorController {
         professorService.createProfessor(professor);
     }
 
+    @PutMapping("(/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updated(@RequestBody Professor professor, @PathVariable Long id){
+        professorService.updateProfessor(id, professor);
+    }
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Professor> findAll(){
@@ -36,32 +41,14 @@ public class ProfessorController {
         return professorService.findProfessorById(id);
     }
 
-    @PutMapping("(/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updated(@RequestBody Professor professor, @PathVariable Long id){
-        professorService.updateProfessor(id, professor);
-    }
 
-    @DeleteMapping("/{id}")
+
+    @DeleteMapping("/delete /{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteByid(@PathVariable Long id){
         professorService.deleteProfessorById(id);
     }
 
-    @PutMapping("/{idProfessor}/matriculas/{idMatricula}/notas")
-    public ResponseEntity<String> inserirNotas(
-            @PathVariable Long idProfessor,
-            @PathVariable Long idMatricula,
-            @RequestParam Double nota1,
-            @RequestParam Double nota2
-    ) {
-        try {
-            professorService.inserirNotas(idMatricula, nota1, nota2);
-            return ResponseEntity.ok("Notas do aluno inseridas com sucesso.");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Erro ao inserir notas do aluno: " + e.getMessage());
-        }
-    }
+
 
 }
